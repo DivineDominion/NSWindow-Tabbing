@@ -1,10 +1,4 @@
-//
-//  ViewController.swift
-//  MultiTabbed
-//
-//  Created by Christian on 17.07.19.
-//  Copyright © 2019 Christian Tietze. All rights reserved.
-//
+//  Copyright © 2019 Christian Tietze. All rights reserved. Distributed under the MIT License.
 
 import Cocoa
 
