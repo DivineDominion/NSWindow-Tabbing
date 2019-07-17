@@ -2,6 +2,27 @@
 
 import Cocoa
 
+var count = 0
+
 class WindowController: NSWindowController {
-    
+
+    override func windowDidLoad() {
+        super.windowDidLoad()
+        count += 1
+        self.window!.title = "Window #\(count)"
+    }
+
+    override func newWindowForTab(_ sender: Any?) {
+
+        guard let mainWindow = self.window else {
+            preconditionFailure("Expected window to be loaded")
+        }
+
+        let newWindowController = self.storyboard!.instantiateInitialController() as! WindowController
+        let newWindow = newWindowController.window!
+
+        // Add as a new tab right to the current one
+        mainWindow.addTabbedWindow(newWindow, ordered: .above)
+    }
+
 }
