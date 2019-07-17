@@ -24,6 +24,10 @@ class WindowController: NSWindowController {
         // Add as a new tab right to the current one
         mainWindow.addTabbedWindow(newWindow, ordered: .above)
         newWindow.makeKeyAndOrderFront(self)
+
+        // `newWindowController` is not referenced and will be deallocated at the end of
+        // this method, so use 1 shared controller to keep the window in the responder chain.
+        newWindow.windowController = self
     }
 
 }
