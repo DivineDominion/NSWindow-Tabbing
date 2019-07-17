@@ -23,6 +23,7 @@ class WindowController: NSWindowController {
 
         // Add as a new tab right to the current one
         mainWindow.addTabbedWindow(newWindow, ordered: .above)
+        newWindow.makeKeyAndOrderFront(self)
     }
 
 }
