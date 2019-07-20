@@ -1,7 +1,7 @@
 # Programmatic NSWindow Tabbing
 
 ![Swift 5.0](https://img.shields.io/badge/Swift-5.0-blue.svg?style=flat)
-![License](https://img.shields.io/github/license/DivineDominion/MultiTabbed.svg?style=flat)
+![License](https://img.shields.io/github/license/DivineDominion/NSWindow-Tabbing.svg?style=flat)
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat)
 
 Demonstrating how to implement programmatic creation of tabs in `NSWindow`s without the use of `NSDocument`.
