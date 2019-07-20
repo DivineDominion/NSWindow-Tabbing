@@ -25,7 +25,7 @@ class WindowController: NSWindowController {
         guard let window = self.window else { preconditionFailure("Expected window to be loaded") }
         guard let tabDelegate = self.tabDelegate else { return }
 
-        let newWindowController = self.storyboard!.instantiateController(withIdentifier: "MainWindowScene") as! WindowController
+        let newWindowController = self.storyboard!.instantiateInitialController() as! WindowController
 
         tabDelegate.createTab(newWindowController: newWindowController,
                               inWindow: window,

@@ -8,8 +8,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var tabService: TabService!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        guard let mainStoryboard = NSStoryboard.main else { preconditionFailure() }
-        guard let mainController = mainStoryboard.instantiateController(withIdentifier: "MainWindowScene") as? WindowController else { preconditionFailure() }
+        let windowStoryboard = NSStoryboard(name: "WindowController", bundle: nil)
+        guard let mainController = windowStoryboard.instantiateInitialController() as? WindowController else { preconditionFailure() }
 
         mainController.showWindow(nil)
         tabService = TabService(initialWindowController: mainController)

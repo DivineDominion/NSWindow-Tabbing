@@ -14,6 +14,7 @@
 		50438B0322DF1BBC002C9F44 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50438B0222DF1BBC002C9F44 /* WindowController.swift */; };
 		50F8575D22E2FDBD00BC0BAB /* TabService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F8575C22E2FDBD00BC0BAB /* TabService.swift */; };
 		50F8575F22E2FEC600BC0BAB /* NotificationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F8575E22E2FEC600BC0BAB /* NotificationToken.swift */; };
+		50F8576122E3047000BC0BAB /* WindowController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8576022E3047000BC0BAB /* WindowController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		50438B0222DF1BBC002C9F44 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		50F8575C22E2FDBD00BC0BAB /* TabService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabService.swift; sourceTree = "<group>"; };
 		50F8575E22E2FEC600BC0BAB /* NotificationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationToken.swift; sourceTree = "<group>"; };
+		50F8576022E3047000BC0BAB /* WindowController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WindowController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				50438AF422DF1BAF002C9F44 /* ViewController.swift */,
 				50F8575C22E2FDBD00BC0BAB /* TabService.swift */,
 				50438B0222DF1BBC002C9F44 /* WindowController.swift */,
+				50F8576022E3047000BC0BAB /* WindowController.storyboard */,
 				50F8575E22E2FEC600BC0BAB /* NotificationToken.swift */,
 				50438AF622DF1BB0002C9F44 /* Assets.xcassets */,
 				50438AF822DF1BB0002C9F44 /* Main.storyboard */,
@@ -132,6 +135,7 @@
 			files = (
 				50438AF722DF1BB0002C9F44 /* Assets.xcassets in Resources */,
 				50438AFA22DF1BB0002C9F44 /* Main.storyboard in Resources */,
+				50F8576122E3047000BC0BAB /* WindowController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
