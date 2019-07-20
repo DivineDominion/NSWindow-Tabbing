@@ -12,6 +12,11 @@ protocol TabDelegate: class {
 
 class WindowController: NSWindowController {
 
+    static func create() -> WindowController {
+        let windowStoryboard = NSStoryboard(name: "WindowController", bundle: nil)
+        return windowStoryboard.instantiateInitialController() as! WindowController
+    }
+
     override func windowDidLoad() {
         super.windowDidLoad()
         count += 1
@@ -25,9 +30,7 @@ class WindowController: NSWindowController {
         guard let window = self.window else { preconditionFailure("Expected window to be loaded") }
         guard let tabDelegate = self.tabDelegate else { return }
 
-        let newWindowController = self.storyboard!.instantiateInitialController() as! WindowController
-
-        tabDelegate.createTab(newWindowController: newWindowController,
+        tabDelegate.createTab(newWindowController: WindowController.create(),
                               inWindow: window,
                               ordered: .above)
 

@@ -2,11 +2,6 @@
 
 import Cocoa
 
-private func createMainController() -> WindowController {
-    let windowStoryboard = NSStoryboard(name: "WindowController", bundle: nil)
-    return windowStoryboard.instantiateInitialController() as! WindowController
-}
-
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
@@ -29,7 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func replaceTabService() {
-        let windowController = createMainController()
+        let windowController = WindowController.create()
         windowController.showWindow(self)
         tabService = TabService(initialWindowController: windowController)
     }
