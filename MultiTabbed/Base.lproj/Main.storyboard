@@ -344,7 +344,8 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <menu key="submenu" title="Font" systemMenu="font" id="aXa-aM-Jaq">
                                                 <items>
-                                                    <menuItem title="Show Fonts" keyEquivalent="t" id="Q5e-8K-NDq">
+                                                    <menuItem title="Show Fonts" id="Q5e-8K-NDq">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
                                                         <connections>
                                                             <action selector="orderFrontFontPanel:" target="YLy-65-1bz" id="WHr-nq-2xA"/>
                                                         </connections>
@@ -602,6 +603,11 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="View" id="HyV-fh-RgO">
                                     <items>
+                                        <menuItem title="New Tab" keyEquivalent="t" id="Wkb-3g-Gdr">
+                                            <connections>
+                                                <action selector="newWindowForTab:" target="Ady-hI-5gd" id="5qt-tt-8gU"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Show Toolbar" keyEquivalent="t" id="snW-S8-Cw5">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
