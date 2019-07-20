@@ -4,6 +4,12 @@ import Cocoa
 
 var count = 0
 
+protocol TabDelegate: class {
+    func createTab(newWindowController: WindowController,
+                   inWindow window: NSWindow,
+                   ordered orderingMode: NSWindow.OrderingMode)
+}
+
 class WindowController: NSWindowController {
 
     override func windowDidLoad() {
@@ -12,36 +18,20 @@ class WindowController: NSWindowController {
         self.window!.title = "Window #\(count)"
     }
 
+    weak var tabDelegate: TabDelegate?
+
     override func newWindowForTab(_ sender: Any?) {
 
-        guard let mainKeyWindow = self.window else {
-            preconditionFailure("Expected window to be loaded")
-        }
+        guard let window = self.window else { preconditionFailure("Expected window to be loaded") }
+        guard let tabDelegate = self.tabDelegate else { return }
 
-        let newWindowController = self.storyboard!.instantiateInitialController() as! WindowController
-        let newWindow = newWindowController.window!
+        let newWindowController = self.storyboard!.instantiateController(withIdentifier: "MainWindowScene") as! WindowController
 
-        // Add as a new tab right to the current one
-        mainKeyWindow.addTabbedWindow(newWindow, ordered: .above)
-        newWindow.delegate = self // Set delegate first to notify about key window changes
-        newWindow.makeKeyAndOrderFront(self)
-
-        // `newWindowController` is not referenced and will be deallocated at the end of
-        // this method, so use 1 shared controller to keep the window in the responder chain.
-        newWindow.windowController = self
+        tabDelegate.createTab(newWindowController: newWindowController,
+                              inWindow: window,
+                              ordered: .above)
 
         inspectWindowHierarchy()
-    }
-
-    func windowDidBecomeKey(_ notification: Notification) {
-        guard let window = notification.object as? NSWindow else { return }
-        guard window != self.window else { return }
-        let oldFrame = self.window?.frame
-        self.window = window
-        inspectWindowHierarchy()
-        if let oldFrame = oldFrame {
-            window.setFrame(oldFrame, display: true)
-        }
     }
 
     func inspectWindowHierarchy() {

@@ -5,16 +5,18 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
+    var tabService: TabService!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        guard let mainStoryboard = NSStoryboard.main else { preconditionFailure() }
+        guard let mainController = mainStoryboard.instantiateController(withIdentifier: "MainWindowScene") as? WindowController else { preconditionFailure() }
+
+        mainController.showWindow(nil)
+        tabService = TabService(initialWindowController: mainController)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 
-
 }
-
