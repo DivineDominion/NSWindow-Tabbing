@@ -51,8 +51,7 @@ class TabService: TabDelegate {
     }
 
     private func removeManagedWindow(forWindow window: NSWindow) {
-        guard let index = managedWindows.firstIndex(where: { $0.window === window }) else { return }
-        managedWindows.remove(at: index)
+        managedWindows.removeAll(where: { $0.window === window })
     }
 
 }
