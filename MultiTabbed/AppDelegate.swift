@@ -11,10 +11,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         replaceTabService()
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
-
     /// Fallback for the menu bar action when all windows are closed.
     @IBAction func newWindowForTab(_ sender: Any?) {
 
