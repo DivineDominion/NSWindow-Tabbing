@@ -1,6 +1,6 @@
 # Programmatic NSWindow Tabbing
 
-![Swift 5.0](https://img.shields.io/badge/Swift-5.0-blue.svg?style=flat)
+![Swift 5.3](https://img.shields.io/badge/Swift-5.3-blue.svg?style=flat)
 ![License](https://img.shields.io/github/license/DivineDominion/NSWindow-Tabbing.svg?style=flat)
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat)
 
@@ -13,4 +13,4 @@ The underlying difficulty people on StackOverflow etc. are experiencing is that 
 
 ## License
 
-Copyright (c) 2019 Christian Tietze. Distributed under the MIT License.
+Copyright (c) 2019--2021 Christian Tietze. Distributed under the MIT License.
